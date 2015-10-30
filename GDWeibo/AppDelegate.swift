@@ -38,8 +38,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     private func setupAppearance()
     {
+        //设置全局导航控制器的颜色
         UINavigationBar.appearance().tintColor = UIColor.orangeColor()
-        
+
         UITabBar.appearance().tintColor = UIColor.orangeColor()
     }
     

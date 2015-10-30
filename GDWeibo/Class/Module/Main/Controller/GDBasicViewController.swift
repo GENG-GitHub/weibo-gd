@@ -13,7 +13,10 @@ class GDBasicViewController: UITableViewController {
     override func viewDidLoad() {
         
         super.viewDidLoad()
-
+        
+        
+        
+        
     }
     
     //根据用户是否登录上网
@@ -46,7 +49,7 @@ class GDBasicViewController: UITableViewController {
         else if self is GDMessageViewController{
             
             //信息界面
-            visitorView?.setupVisiter("登录后，别人评论你的微博，发给你的消息，都会在这里收到通知", imageName: "visitordiscover_image_message")
+            visitorView?.setupVisiter("登录后，别人评论你的微博l，发给你的消息，都会在这里收到通知", imageName: "visitordiscover_image_message")
         }
         else if self is GDDiscoverViewController {
             

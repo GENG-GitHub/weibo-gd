@@ -263,6 +263,7 @@ class GDVisitorView: UIView {
         
         sendSubviewToBack(bgView)
         
+        
     }
     
     func startRotationAnimation()
