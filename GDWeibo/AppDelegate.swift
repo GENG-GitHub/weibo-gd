@@ -23,7 +23,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window = UIWindow(frame: UIScreen.mainScreen().bounds)
         
         //创建UITabBarController
-        let tabBarVC = GDMainViewController()
+//        let tabBarVC = GDMainViewController()
+        let tabBarVC = GDWelcomeViewController()
         
         //设置窗口的根控制器
         window?.rootViewController = tabBarVC

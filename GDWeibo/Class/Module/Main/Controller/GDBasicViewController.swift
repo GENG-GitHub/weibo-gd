@@ -13,10 +13,7 @@ class GDBasicViewController: UITableViewController {
     override func viewDidLoad() {
         
         super.viewDidLoad()
-        
-        
-        
-        
+ 
     }
     
     //根据用户是否登录上网

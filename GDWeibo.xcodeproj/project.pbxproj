@@ -16,6 +16,7 @@
 		B14DB14D1BE0696F00580B5E /* GDMessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B14DB14C1BE0696F00580B5E /* GDMessageViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		B14DB14F1BE0698700580B5E /* GDProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B14DB14E1BE0698700580B5E /* GDProfileViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		B14DB1511BE07A7900580B5E /* GDMainTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = B14DB1501BE07A7900580B5E /* GDMainTabBar.swift */; settings = {ASSET_TAGS = (); }; };
+		B173D6741BE607DA00F4C135 /* GDWelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B173D6731BE607DA00F4C135 /* GDWelcomeViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		B1AAAB0A1BE3DB4A0080EF40 /* GDOauthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1AAAB091BE3DB4A0080EF40 /* GDOauthViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		B1AAAB0C1BE40A350080EF40 /* GDNetworkTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1AAAB0B1BE40A350080EF40 /* GDNetworkTools.swift */; settings = {ASSET_TAGS = (); }; };
 		B1CE09AB1BE0890E009A6687 /* GDBasicViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1CE09AA1BE0890E009A6687 /* GDBasicViewController.swift */; settings = {ASSET_TAGS = (); }; };
@@ -36,6 +37,7 @@
 		B14DB14C1BE0696F00580B5E /* GDMessageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GDMessageViewController.swift; sourceTree = "<group>"; };
 		B14DB14E1BE0698700580B5E /* GDProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GDProfileViewController.swift; sourceTree = "<group>"; };
 		B14DB1501BE07A7900580B5E /* GDMainTabBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GDMainTabBar.swift; path = ../../Discover/View/GDMainTabBar.swift; sourceTree = "<group>"; };
+		B173D6731BE607DA00F4C135 /* GDWelcomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GDWelcomeViewController.swift; sourceTree = "<group>"; };
 		B1AAAB091BE3DB4A0080EF40 /* GDOauthViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GDOauthViewController.swift; sourceTree = "<group>"; };
 		B1AAAB0B1BE40A350080EF40 /* GDNetworkTools.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GDNetworkTools.swift; sourceTree = "<group>"; };
 		B1CE09AA1BE0890E009A6687 /* GDBasicViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GDBasicViewController.swift; sourceTree = "<group>"; };
@@ -134,6 +136,7 @@
 		B14DB1301BE0653800580B5E /* Module(模块) */ = {
 			isa = PBXGroup;
 			children = (
+				B173D6701BE6075D00F4C135 /* NewFeature(新特性) */,
 				B1AAAB081BE3DB1D0080EF40 /* Oauth(授权) */,
 				B14DB1391BE0653800580B5E /* Main(主要的) */,
 				B14DB1311BE0653800580B5E /* Discover(发现) */,
@@ -322,10 +325,35 @@
 			path = Tool;
 			sourceTree = "<group>";
 		};
-		B1AAAB081BE3DB1D0080EF40 /* Oauth(授权) */ = {
+		B173D6701BE6075D00F4C135 /* NewFeature(新特性) */ = {
+			isa = PBXGroup;
+			children = (
+				B173D6721BE607A200F4C135 /* Controller */,
+			);
+			name = "NewFeature(新特性)";
+			path = NewFeature;
+			sourceTree = "<group>";
+		};
+		B173D6711BE6079400F4C135 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
 				B1AAAB091BE3DB4A0080EF40 /* GDOauthViewController.swift */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		B173D6721BE607A200F4C135 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				B173D6731BE607DA00F4C135 /* GDWelcomeViewController.swift */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		B1AAAB081BE3DB1D0080EF40 /* Oauth(授权) */ = {
+			isa = PBXGroup;
+			children = (
+				B173D6711BE6079400F4C135 /* Controller */,
 			);
 			name = "Oauth(授权)";
 			path = Oauth;
@@ -461,6 +489,7 @@
 				B14DB1511BE07A7900580B5E /* GDMainTabBar.swift in Sources */,
 				B1AAAB0C1BE40A350080EF40 /* GDNetworkTools.swift in Sources */,
 				B14DB14D1BE0696F00580B5E /* GDMessageViewController.swift in Sources */,
+				B173D6741BE607DA00F4C135 /* GDWelcomeViewController.swift in Sources */,
 				B1CE09AD1BE08B06009A6687 /* GDVisitorView.swift in Sources */,
 				B1CE09AB1BE0890E009A6687 /* GDBasicViewController.swift in Sources */,
 				B1EA03351BE58E5500235F34 /* GDUserAccount.swift in Sources */,
