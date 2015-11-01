@@ -82,7 +82,10 @@ extension GDBasicViewController: GDVisitorViewDelegate {
     }
     func visitorViewWillLogin()
     {
-        print(__FUNCTION__)
+        let oauthVC = GDOauthViewController()
+        
+        presentViewController(UINavigationController(rootViewController: oauthVC), animated: true, completion: nil)
+        
     }
   
 }

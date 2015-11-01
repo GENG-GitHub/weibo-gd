@@ -12,10 +12,13 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
-
+    
+    
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
       
+        print("GDUserAccount:\(GDUserAccount.loadAccount())")
+        print("GDUserAccount:\(GDUserAccount.loadAccount())")
+        
         //创建UIWindow
         window = UIWindow(frame: UIScreen.mainScreen().bounds)
         
