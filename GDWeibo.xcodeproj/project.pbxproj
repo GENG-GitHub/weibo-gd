@@ -22,6 +22,7 @@
 		B1CE09AB1BE0890E009A6687 /* GDBasicViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1CE09AA1BE0890E009A6687 /* GDBasicViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		B1CE09AD1BE08B06009A6687 /* GDVisitorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1CE09AC1BE08B06009A6687 /* GDVisitorView.swift */; settings = {ASSET_TAGS = (); }; };
 		B1EA03351BE58E5500235F34 /* GDUserAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1EA03341BE58E5500235F34 /* GDUserAccount.swift */; settings = {ASSET_TAGS = (); }; };
+		B1F9C98B1BE66171000AC1E4 /* GDNewFeatureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1F9C98A1BE66171000AC1E4 /* GDNewFeatureViewController.swift */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,6 +44,7 @@
 		B1CE09AA1BE0890E009A6687 /* GDBasicViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GDBasicViewController.swift; sourceTree = "<group>"; };
 		B1CE09AC1BE08B06009A6687 /* GDVisitorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GDVisitorView.swift; sourceTree = "<group>"; };
 		B1EA03341BE58E5500235F34 /* GDUserAccount.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GDUserAccount.swift; sourceTree = "<group>"; };
+		B1F9C98A1BE66171000AC1E4 /* GDNewFeatureViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GDNewFeatureViewController.swift; path = ../../Model/GDNewFeatureViewController.swift; sourceTree = "<group>"; };
 		C547E420F515CF5DFAD5C9F0 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -345,6 +347,7 @@
 		B173D6721BE607A200F4C135 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				B1F9C98A1BE66171000AC1E4 /* GDNewFeatureViewController.swift */,
 				B173D6731BE607DA00F4C135 /* GDWelcomeViewController.swift */,
 			);
 			name = Controller;
@@ -498,6 +501,7 @@
 				B14DB1471BE0685E00580B5E /* GDMainViewController.swift in Sources */,
 				B1AAAB0A1BE3DB4A0080EF40 /* GDOauthViewController.swift in Sources */,
 				B14DB11B1BE0312700580B5E /* AppDelegate.swift in Sources */,
+				B1F9C98B1BE66171000AC1E4 /* GDNewFeatureViewController.swift in Sources */,
 				B14DB1491BE0694200580B5E /* GDDiscoverViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

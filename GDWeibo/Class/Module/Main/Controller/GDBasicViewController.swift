@@ -17,7 +17,7 @@ class GDBasicViewController: UITableViewController {
     }
     
     //根据用户是否登录上网
-    let userLogin = false
+    let userLogin = GDUserAccount.userLogin()
     
     var visitorView: GDVisitorView?
     

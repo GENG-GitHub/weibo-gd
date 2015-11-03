@@ -17,6 +17,30 @@ class GDUserAccount: NSObject ,NSCoding{
 //    "uid": 2399825217,
 //    "expires_in": 157679999])
     
+    //类方法返回用户是否登录
+    class func userLogin() -> Bool {
+        
+//        if self.loadAccount() != nil {
+//         
+//            return true
+//        }
+//        
+//        return false
+        
+        return self.loadAccount() != nil ? true : false
+    
+    }
+    
+    
+    //用户是否已经登录
+    func loadAccount() -> Bool
+    {
+        
+        
+        return true
+    }
+    
+    
     //接口获取授权后的access_token
     var access_token: String?
     

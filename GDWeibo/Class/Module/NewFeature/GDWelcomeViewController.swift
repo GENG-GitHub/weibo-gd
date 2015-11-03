@@ -39,7 +39,7 @@ class GDWelcomeViewController: UIViewController {
     }
     
     
-    
+    //MARK: - 头像动画
     private func moveAnimation() {
         
         //开始动画
@@ -60,12 +60,13 @@ class GDWelcomeViewController: UIViewController {
                     }, completion: { (_) -> Void in
                         
                     //完成动画之后，跳转控制器，将文字显示，后跳转控制器
+                        
+                        (UIApplication.sharedApplication().delegate as? AppDelegate)?.window?.rootViewController = GDMainViewController()
+                        
                 })
 
         })
 }
-    
-    
     
     func prepareUI() {
         
@@ -86,10 +87,15 @@ class GDWelcomeViewController: UIViewController {
         
         //头像
         iconView.translatesAutoresizingMaskIntoConstraints = false
+        
+        view.addConstraint(NSLayoutConstraint(item: iconView, attribute: NSLayoutAttribute.Width, relatedBy: NSLayoutRelation.Equal, toItem: nil, attribute: NSLayoutAttribute.NotAnAttribute, multiplier: 1, constant: 85))
+        
+        view.addConstraint(NSLayoutConstraint(item: iconView, attribute: NSLayoutAttribute.Height, relatedBy: NSLayoutRelation.Equal, toItem: nil, attribute: NSLayoutAttribute.NotAnAttribute, multiplier: 1, constant: 85))
+        
         view.addConstraint(NSLayoutConstraint(item: iconView, attribute: NSLayoutAttribute.CenterX, relatedBy: NSLayoutRelation.Equal, toItem: view, attribute: NSLayoutAttribute.CenterX, multiplier: 1, constant: 0))
         
         view.addConstraint(NSLayoutConstraint(item: iconView, attribute: NSLayoutAttribute.Bottom, relatedBy: NSLayoutRelation.Equal, toItem: view, attribute: NSLayoutAttribute.Bottom, multiplier: 1, constant: -160))
-        
+    
         //记录下头像的底部约束
         iconViewBottemCons = view.constraints.last
         
@@ -100,14 +106,12 @@ class GDWelcomeViewController: UIViewController {
         
         view.addConstraint(NSLayoutConstraint(item: label, attribute: NSLayoutAttribute.Top, relatedBy: NSLayoutRelation.Equal, toItem: iconView, attribute: NSLayoutAttribute.Bottom, multiplier: 1, constant: 16))
         
-        
-        
-        
+     
     }
     
     
     
-    
+    //MARK： - 自定义子控件
     //背景
     private lazy var backgroundView: UIImageView = UIImageView(image: UIImage(named: "ad_background"))
 

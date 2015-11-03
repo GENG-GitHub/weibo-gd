@@ -113,6 +113,7 @@ class GDNetworkTools: NSObject {
             
             "access_token": GDUserAccount.loadAccount()!.access_token!,
             "uid": GDUserAccount.loadAccount()!.uid!,
+//            "source" : "1813572641"
         ]
         
         requestGET(urlStr, parameters: parameters, finshed: finished)
@@ -140,8 +141,11 @@ class GDNetworkTools: NSObject {
     func requestGET(URLString: String, parameters: AnyObject?, finshed: NetworkFinishedCallback) {
         
         afnManager.GET(URLString, parameters: parameters, success: { (_, result) -> Void in
+            
             finshed(result: result as? [String: AnyObject], error: nil)
+            
             }) { (_, error) -> Void in
+                
                 finshed(result: nil, error: error)
         }
         

@@ -168,12 +168,14 @@ extension GDOauthViewController: UIWebViewDelegate {
             account.saveAccount()
             
             print("account1:\(account)")
-            
+            //https://api.weibo.com/2/users/show.json?access_token=2.002K76cCdFZjyBb84cac7f5a2XSb3D&uid=2399825217
+            //https://api.weibo.com/2/users/show.json?access_token=2.002K76cCdFZjyBb84cac7f5a2XSb3D&uid=2399825217
             //加载数据
             account.loadUserInfo({ (error) -> () in
                 
                 if error != nil
                 {
+                    print("error:\(error)")
                     self.netError("加载用户信息失败")
                     
                     return
@@ -181,10 +183,11 @@ extension GDOauthViewController: UIWebViewDelegate {
                 
                 print("account2:\(account)")
                 self.close()
+                (UIApplication.sharedApplication().delegate as? AppDelegate)?.window?.rootViewController = GDMainViewController()
                 
             })
 
-            SVProgressHUD.dismiss()
+//            SVProgressHUD.dismiss()
             
         }
   
