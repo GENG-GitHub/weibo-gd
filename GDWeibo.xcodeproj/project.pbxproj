@@ -17,6 +17,11 @@
 		B14DB14F1BE0698700580B5E /* GDProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B14DB14E1BE0698700580B5E /* GDProfileViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		B14DB1511BE07A7900580B5E /* GDMainTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = B14DB1501BE07A7900580B5E /* GDMainTabBar.swift */; settings = {ASSET_TAGS = (); }; };
 		B173D6741BE607DA00F4C135 /* GDWelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B173D6731BE607DA00F4C135 /* GDWelcomeViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		B1747E381BE924D50066EF5A /* UIBarButtonItem+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1747E371BE924D50066EF5A /* UIBarButtonItem+Extension.swift */; settings = {ASSET_TAGS = (); }; };
+		B1747E3A1BE92AC50066EF5A /* GDHomeTitleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1747E391BE92AC50066EF5A /* GDHomeTitleButton.swift */; settings = {ASSET_TAGS = (); }; };
+		B1747E3C1BE94E6B0066EF5A /* UIView+AutoLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1747E3B1BE94E6B0066EF5A /* UIView+AutoLayout.swift */; settings = {ASSET_TAGS = (); }; };
+		B1747E3E1BE979FD0066EF5A /* GDStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1747E3D1BE979FD0066EF5A /* GDStatus.swift */; settings = {ASSET_TAGS = (); }; };
+		B1747E401BE9B7300066EF5A /* GDUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1747E3F1BE9B7300066EF5A /* GDUser.swift */; settings = {ASSET_TAGS = (); }; };
 		B1AAAB0A1BE3DB4A0080EF40 /* GDOauthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1AAAB091BE3DB4A0080EF40 /* GDOauthViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		B1AAAB0C1BE40A350080EF40 /* GDNetworkTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1AAAB0B1BE40A350080EF40 /* GDNetworkTools.swift */; settings = {ASSET_TAGS = (); }; };
 		B1CE09AB1BE0890E009A6687 /* GDBasicViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1CE09AA1BE0890E009A6687 /* GDBasicViewController.swift */; settings = {ASSET_TAGS = (); }; };
@@ -39,6 +44,11 @@
 		B14DB14E1BE0698700580B5E /* GDProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GDProfileViewController.swift; sourceTree = "<group>"; };
 		B14DB1501BE07A7900580B5E /* GDMainTabBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GDMainTabBar.swift; path = ../../Discover/View/GDMainTabBar.swift; sourceTree = "<group>"; };
 		B173D6731BE607DA00F4C135 /* GDWelcomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GDWelcomeViewController.swift; sourceTree = "<group>"; };
+		B1747E371BE924D50066EF5A /* UIBarButtonItem+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIBarButtonItem+Extension.swift"; sourceTree = "<group>"; };
+		B1747E391BE92AC50066EF5A /* GDHomeTitleButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GDHomeTitleButton.swift; sourceTree = "<group>"; };
+		B1747E3B1BE94E6B0066EF5A /* UIView+AutoLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+AutoLayout.swift"; sourceTree = "<group>"; };
+		B1747E3D1BE979FD0066EF5A /* GDStatus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GDStatus.swift; sourceTree = "<group>"; };
+		B1747E3F1BE9B7300066EF5A /* GDUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GDUser.swift; sourceTree = "<group>"; };
 		B1AAAB091BE3DB4A0080EF40 /* GDOauthViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GDOauthViewController.swift; sourceTree = "<group>"; };
 		B1AAAB0B1BE40A350080EF40 /* GDNetworkTools.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GDNetworkTools.swift; sourceTree = "<group>"; };
 		B1CE09AA1BE0890E009A6687 /* GDBasicViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GDBasicViewController.swift; sourceTree = "<group>"; };
@@ -113,6 +123,7 @@
 		B14DB12D1BE0653800580B5E /* Extension(延展) */ = {
 			isa = PBXGroup;
 			children = (
+				B1747E371BE924D50066EF5A /* UIBarButtonItem+Extension.swift */,
 			);
 			name = "Extension(延展)";
 			path = Extension;
@@ -121,6 +132,7 @@
 		B14DB12E1BE0653800580B5E /* Library(第三方库) */ = {
 			isa = PBXGroup;
 			children = (
+				B1747E3B1BE94E6B0066EF5A /* UIView+AutoLayout.swift */,
 			);
 			name = "Library(第三方库)";
 			path = Library;
@@ -130,6 +142,8 @@
 			isa = PBXGroup;
 			children = (
 				B1EA03341BE58E5500235F34 /* GDUserAccount.swift */,
+				B1747E3D1BE979FD0066EF5A /* GDStatus.swift */,
+				B1747E3F1BE9B7300066EF5A /* GDUser.swift */,
 			);
 			name = "Model(全局模型)";
 			path = Model;
@@ -212,6 +226,7 @@
 		B14DB1381BE0653800580B5E /* View */ = {
 			isa = PBXGroup;
 			children = (
+				B1747E391BE92AC50066EF5A /* GDHomeTitleButton.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -490,12 +505,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				B14DB1511BE07A7900580B5E /* GDMainTabBar.swift in Sources */,
+				B1747E3C1BE94E6B0066EF5A /* UIView+AutoLayout.swift in Sources */,
 				B1AAAB0C1BE40A350080EF40 /* GDNetworkTools.swift in Sources */,
 				B14DB14D1BE0696F00580B5E /* GDMessageViewController.swift in Sources */,
 				B173D6741BE607DA00F4C135 /* GDWelcomeViewController.swift in Sources */,
+				B1747E3A1BE92AC50066EF5A /* GDHomeTitleButton.swift in Sources */,
 				B1CE09AD1BE08B06009A6687 /* GDVisitorView.swift in Sources */,
 				B1CE09AB1BE0890E009A6687 /* GDBasicViewController.swift in Sources */,
+				B1747E3E1BE979FD0066EF5A /* GDStatus.swift in Sources */,
+				B1747E401BE9B7300066EF5A /* GDUser.swift in Sources */,
 				B1EA03351BE58E5500235F34 /* GDUserAccount.swift in Sources */,
+				B1747E381BE924D50066EF5A /* UIBarButtonItem+Extension.swift in Sources */,
 				B14DB14F1BE0698700580B5E /* GDProfileViewController.swift in Sources */,
 				B14DB14B1BE0695500580B5E /* GDHomeViewController.swift in Sources */,
 				B14DB1471BE0685E00580B5E /* GDMainViewController.swift in Sources */,

@@ -31,15 +31,13 @@ class GDUserAccount: NSObject ,NSCoding{
     
     }
     
-    
-    //用户是否已经登录
-    func loadAccount() -> Bool
-    {
-        
-        
-        return true
-    }
-    
+//    
+//    //用户是否已经登录
+//    func loadAccount() -> Bool
+//    {
+//        return true
+//    }
+//    
     
     //接口获取授权后的access_token
     var access_token: String?

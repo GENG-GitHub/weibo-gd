@@ -9,6 +9,43 @@
 import UIKit
 import AFNetworking
 
+
+//定义错误枚举
+enum GDNetworkError: Int {
+    
+    case emptyToken = -1
+    case emptyUid = -2
+    
+    //枚举中定义属性
+    var description: String {
+       
+        get {
+            switch self {
+            case GDNetworkError.emptyToken:
+                return "access Token为空"
+            case GDNetworkError.emptyUid:
+                return "uid为空"
+            }
+        }
+    }
+    
+    //枚举中定义方法
+    func error() -> NSError? {
+        
+        return NSError(domain: "com.baidu.error.network", code: rawValue, userInfo: ["errorDescription":description])
+        
+    }
+
+}
+
+
+
+
+
+
+
+
+
 class GDNetworkTools: NSObject {
 
     
@@ -75,26 +112,38 @@ class GDNetworkTools: NSObject {
             
         ]
         //测试返回结果类型  
-        afnManager.POST(urlString, parameters: parameters, success: { (_, result) -> Void in
-            
-            //请求成功
-            finshed(result: result as? [String: AnyObject], error: nil)
-            
-            }) { (_, error: NSError) -> Void in
-                
-                //请求失败
-                finshed(result: nil, error: error)
-        }
+//        afnManager.POST(urlString, parameters: parameters, success: { (_, result) -> Void in
+//
+//            //请求成功
+//            finshed(result: result as? [String: AnyObject], error: nil)
+//            
+//            }) { (_, error: NSError) -> Void in
+//                
+//                //请求失败
+//                finshed(result: nil, error: error)
+//        }
+        
+        requestPOST(urlString, parameters: parameters, finshed: finshed)
+        
+        
     }
     
     
-    //加载用户信息
+    //MARK: - 加载用户信息
     func loadUserInfo(finished: NetworkFinishedCallback)
     {
-        //判断是否有accessToken
-        if GDUserAccount.loadAccount()?.access_token == nil
-        {
-            print("没有找到accessToken")
+//        //判断是否有accessToken
+//        if GDUserAccount.loadAccount()?.access_token == nil
+//        {
+//            print("没有找到accessToken")
+//            
+//            finished(result: nil, error: GDNetworkError.emptyToken.error())
+//            
+//            return
+//        }
+        
+        guard var parameters = tokenDict(finished) else {
+            print("没有 token")
             return
         }
         
@@ -102,19 +151,25 @@ class GDNetworkTools: NSObject {
         if GDUserAccount.loadAccount()?.uid == nil
         {
             print("没有找到uid")
+            finished(result: nil, error: GDNetworkError.emptyUid.error())
+            
             return
         }
         
         //创建url
-        let urlStr = "https://api.weibo.com/2/users/show.json"
+        let urlStr = "2/users/show.json"
         
+
         //设置请求参数
-        let parameters = [
-            
-            "access_token": GDUserAccount.loadAccount()!.access_token!,
-            "uid": GDUserAccount.loadAccount()!.uid!,
-//            "source" : "1813572641"
-        ]
+//        let parameters = [
+//            
+//            "access_token": GDUserAccount.loadAccount()!.access_token!,
+//            "uid": GDUserAccount.loadAccount()!.uid!,
+////            "source" : "1813572641"
+//        ]
+        
+        parameters["uid"] = GDUserAccount.loadAccount()!.uid!
+        
         
         requestGET(urlStr, parameters: parameters, finshed: finished)
         
@@ -134,11 +189,46 @@ class GDNetworkTools: NSObject {
 
     }
     
+    
+    
+    //MARK: - 获取微博数据
+    func loadStatus(finished:NetworkFinishedCallback)
+    {
+        
+        guard let parameters = tokenDict(finished) else{
+            
+            return
+        }
+        //https://api.weibo.com/2/statuses/home_timeline.json?access_token=2.002K76cCdFZjyBf2cc03a5b4089Cbw
+        let urlString = "https://api.weibo.com/2/statuses/home_timeline.json"
+        //get请求
+        requestGET(urlString, parameters: parameters, finshed: finished)
+    }
+    
+    
+    
+    //返回值为token的字典
+    func tokenDict(finished: NetworkFinishedCallback) -> [String: AnyObject]?
+    {
+        //当access为空
+        if GDUserAccount.loadAccount()?.access_token == nil
+        {
+            finished(result: nil, error: GDNetworkError.emptyToken.error())
+            return nil
+        }
+        
+        return ["access_token" :GDUserAccount.loadAccount()!.access_token!]
+    }
+    
+    
+    
+    
+    
     // 类型别名 = typedefined
     typealias NetworkFinishedCallback = (result: [String: AnyObject]?, error: NSError?) -> ()
     
     // MARK: - 封装AFN.GET
-    func requestGET(URLString: String, parameters: AnyObject?, finshed: NetworkFinishedCallback) {
+    private func requestGET(URLString: String, parameters: AnyObject?, finshed: NetworkFinishedCallback) {
         
         afnManager.GET(URLString, parameters: parameters, success: { (_, result) -> Void in
             
@@ -151,7 +241,19 @@ class GDNetworkTools: NSObject {
         
     }
     
-    
-    
-
+    private func requestPOST(URLString: String, parameters: AnyObject?, finshed: NetworkFinishedCallback)
+    {
+        //测试返回结果类型
+        afnManager.POST(URLString, parameters: parameters, success: { (_, result) -> Void in
+            
+            //请求成功
+            finshed(result: result as? [String: AnyObject], error: nil)
+            
+            }) { (_, error: NSError) -> Void in
+                
+                //请求失败
+                finshed(result: nil, error: error)
+        }
+        
+    }
 }

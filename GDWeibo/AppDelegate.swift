@@ -27,8 +27,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.rootViewController = defaultController()
         //创建UITabBarController
 //        let tabBarVC = GDMainViewController()
-//        let tabBarVC = GDWelcomeViewController()
-//        let tabBarVC = GDNewFeatureViewController()
+//        window?.rootViewController = GDWelcomeViewController()
+//        window?.rootViewController = GDNewFeatureViewController()
         
         
         //显示窗口

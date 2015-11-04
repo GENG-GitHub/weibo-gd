@@ -147,13 +147,15 @@ class GDNewFeatureViewCell: UICollectionViewCell {
         
         //设置背景图片约束
         backgroudView.translatesAutoresizingMaskIntoConstraints = false
-        contentView.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("H:|-0-[bgv]-0-|", options: NSLayoutFormatOptions(rawValue: 0), metrics: nil, views: ["bgv" : backgroudView]))
-        contentView.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("V:|-0-[bgv]-0-|", options: NSLayoutFormatOptions(rawValue: 0), metrics: nil, views: ["bgv" : backgroudView]))
+//        contentView.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("H:|-0-[bgv]-0-|", options: NSLayoutFormatOptions(rawValue: 0), metrics: nil, views: ["bgv" : backgroudView]))
+//        contentView.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("V:|-0-[bgv]-0-|", options: NSLayoutFormatOptions(rawValue: 0), metrics: nil, views: ["bgv" : backgroudView]))
+        backgroudView.ff_Fill(contentView)
         
         //设置按钮图片约束
         starButton.translatesAutoresizingMaskIntoConstraints = false
-        addConstraint(NSLayoutConstraint(item: starButton, attribute: NSLayoutAttribute.CenterX, relatedBy: NSLayoutRelation.Equal, toItem: self, attribute: NSLayoutAttribute.CenterX, multiplier: 1, constant: 0))
-         addConstraint(NSLayoutConstraint(item: starButton, attribute: NSLayoutAttribute.Bottom, relatedBy: NSLayoutRelation.Equal, toItem: self, attribute: NSLayoutAttribute.Bottom, multiplier: 1, constant: -160))
+//        addConstraint(NSLayoutConstraint(item: starButton, attribute: NSLayoutAttribute.CenterX, relatedBy: NSLayoutRelation.Equal, toItem: self, attribute: NSLayoutAttribute.CenterX, multiplier: 1, constant: 0))
+//         addConstraint(NSLayoutConstraint(item: starButton, attribute: NSLayoutAttribute.Bottom, relatedBy: NSLayoutRelation.Equal, toItem: self, attribute: NSLayoutAttribute.Bottom, multiplier: 1, constant: -160))
+        starButton.ff_AlignInner(type: ff_AlignType.BottomCenter, referView: contentView, size: nil, offset: CGPoint(x: 0, y: -160))
         
         
     }
