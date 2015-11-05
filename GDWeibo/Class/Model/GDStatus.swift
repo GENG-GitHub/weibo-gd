@@ -24,10 +24,40 @@ class GDStatus: NSObject {
     var source: String?
     
     /// 微博的配图
-    var pic_urls: [[String: AnyObject]]?
+    var pic_urls: [[String: AnyObject]]? {
+        
+        didSet {
+         
+            //判断pic_urls是否有值
+            if pic_urls?.count == 0 {
+                
+                return
+            }
+            
+            pictureURLs = [NSURL]()
+            
+            //遍历数组存储url
+            for dict in pic_urls! {
+                let value = dict["thumbnail_pic"] as! String
+                //将图片的url存入pictureURLs中
+                pictureURLs?.append(NSURL(string: value)!)
+                
+            }
+        }
+        
+    }
     
     //用户模型
     var user: GDUser?
+    
+    //存储pic_urls中的NSURL
+    var pictureURLs: [NSURL]?
+    
+    //用于缓存cell的行高
+    var rowHeight: CGFloat?
+    
+    /// 被转发微博
+    var retweeted_status: GDStatus?
     
     
     //字典转模型
@@ -51,11 +81,20 @@ class GDStatus: NSObject {
                 return
             }
         }
-        super.setValue(value, forKey: key)
+        
+        if key == "retweeted_status"
+        {
+            if let dict = value as? [String: AnyObject]
+            {
+                retweeted_status = GDStatus(dict: dict)
+                return
+            }
+        }
+        
+        
+        
+        return super.setValue(value, forKey: key)
     }
-
-    
-    
     
     //字典的key在模型中找不到的key
     override func setValue(value: AnyObject?, forUndefinedKey key: String) { }

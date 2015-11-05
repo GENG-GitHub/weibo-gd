@@ -21,6 +21,15 @@ class GDUser: NSObject {
     /// 用户头像地址（中图），50×50像素
     var profile_image_url: String?
     
+    /// 返回头像对应的NSURL对象,有可能没有值
+    var profileImageUrl: NSURL? {
+        if let urlString = profile_image_url {
+            return NSURL(string: urlString)
+        }
+        
+        return nil
+    }
+    
     /// verified_type 没有认证:-1   认证用户:0  企业认证:2,3,5  达人:220
     var verified_type: Int = -1
     

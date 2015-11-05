@@ -22,7 +22,17 @@ class GDHomeViewController: GDBasicViewController {
         }
         
         //注册cell
-        tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "cell")
+        tableView.registerClass(GDStatusCell.self, forCellReuseIdentifier: "cell")
+//        tableView.rowHeight = 100
+
+        //预设行高
+        tableView.estimatedRowHeight = 300
+        //设置自动行高
+        tableView.rowHeight = UITableViewAutomaticDimension
+        
+        // 去掉分割线
+        tableView.separatorStyle = UITableViewCellSeparatorStyle.None
+        
         //设置导航控制器
         setNavgationBar()
         //加载微博数据
@@ -60,7 +70,7 @@ class GDHomeViewController: GDBasicViewController {
                 return
             }
             //有微博数据
-            self?.statuses = statuses!
+            self!.statuses = statuses!
         }
         
     }
@@ -68,21 +78,44 @@ class GDHomeViewController: GDBasicViewController {
     //MARK: - 数据源方法
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         //返回行数
-        return statuses.count
-        
+        return statuses.count ?? 0
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell
     {
         //创建你cell
-        let cell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath)
+        let cell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath) as! GDStatusCell
+        
         //为cell赋值
-        cell.textLabel!.text = statuses[indexPath.row].text
+//        cell.textLabel!.text = statuses[indexPath.row].text
+        // 设置cell的微博模型
+        cell.status = statuses[indexPath.row]
         
         return cell
     }
 
-    
+    //返回每个cell的高度
+    override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        
+        //获取status
+        let status = statuses[indexPath.row]
+
+        //有属性直接返回
+        if let rowHeight = status.rowHeight {
+         
+            return rowHeight
+        }
+        
+        //获取cell
+        let cell = tableView.dequeueReusableCellWithIdentifier("cell") as! GDStatusCell
+        //计算并获得行高
+        let rowHeight = cell.rowHeight(status)
+        //将行高设置给模型属性
+        status.rowHeight = rowHeight
+        
+        return rowHeight
+        
+    }
     
     
     
@@ -109,7 +142,8 @@ class GDHomeViewController: GDBasicViewController {
         
         
         //设置中间的按钮
-        let btn = GDHomeTitleButton(title: "新浪微博")
+        let name = GDUserAccount.loadAccount()?.name ?? "没有名称"
+        let btn = GDHomeTitleButton(title: name)
         //为按钮添加点击事件
         btn.addTarget(self, action: "homeTitleClick:", forControlEvents: UIControlEvents.TouchUpInside)
         

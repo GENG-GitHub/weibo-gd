@@ -199,7 +199,7 @@ class GDNetworkTools: NSObject {
             
             return
         }
-        //https://api.weibo.com/2/statuses/home_timeline.json?access_token=2.002K76cCdFZjyBf2cc03a5b4089Cbw
+        //https://api.weibo.com/2/statuses/home_timeline.json?access_token=2.002K76cCdFZjyBa9cdde6092r1Z_eC
         let urlString = "https://api.weibo.com/2/statuses/home_timeline.json"
         //get请求
         requestGET(urlString, parameters: parameters, finshed: finished)
