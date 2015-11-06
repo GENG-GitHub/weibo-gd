@@ -9,6 +9,11 @@
 import UIKit
 import SVProgressHUD
 
+enum GDStatusCellIndentifier: String {
+    case NormalCell = "NormalCell"
+    case ForwardCell = "ForwardCell"
+}
+
 class GDHomeViewController: GDBasicViewController {
 
     override func viewDidLoad() {
@@ -22,7 +27,9 @@ class GDHomeViewController: GDBasicViewController {
         }
         
         //注册cell
-        tableView.registerClass(GDStatusCell.self, forCellReuseIdentifier: "cell")
+        tableView.registerClass(GDStatusNormaCell.self, forCellReuseIdentifier: GDStatusCellIndentifier.NormalCell.rawValue)
+        tableView.registerClass(GDStatusForwardCell.self, forCellReuseIdentifier: GDStatusCellIndentifier.ForwardCell.rawValue)
+        
 //        tableView.rowHeight = 100
 
         //预设行高
@@ -39,8 +46,9 @@ class GDHomeViewController: GDBasicViewController {
         loadStatus()
         
     }
-
-    //
+    
+    
+    //获取微博数据
     private var statuses = [GDStatus]() {
         
         didSet{
@@ -83,13 +91,15 @@ class GDHomeViewController: GDBasicViewController {
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell
     {
-        //创建你cell
-        let cell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath) as! GDStatusCell
+        let status = statuses[indexPath.row]
+        
+        //创建cell
+        let cell = tableView.dequeueReusableCellWithIdentifier(status.cellId(), forIndexPath: indexPath) as! GDStatusCell
         
         //为cell赋值
 //        cell.textLabel!.text = statuses[indexPath.row].text
         // 设置cell的微博模型
-        cell.status = statuses[indexPath.row]
+        cell.status = status
         
         return cell
     }
@@ -107,7 +117,7 @@ class GDHomeViewController: GDBasicViewController {
         }
         
         //获取cell
-        let cell = tableView.dequeueReusableCellWithIdentifier("cell") as! GDStatusCell
+        let cell = tableView.dequeueReusableCellWithIdentifier(status.cellId()) as! GDStatusCell
         //计算并获得行高
         let rowHeight = cell.rowHeight(status)
         //将行高设置给模型属性

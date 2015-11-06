@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SDWebImage
 
 class GDStatus: NSObject {
     
@@ -34,13 +35,13 @@ class GDStatus: NSObject {
                 return
             }
             
-            pictureURLs = [NSURL]()
+            storePictureURLs = [NSURL]()
             
             //遍历数组存储url
             for dict in pic_urls! {
                 let value = dict["thumbnail_pic"] as! String
                 //将图片的url存入pictureURLs中
-                pictureURLs?.append(NSURL(string: value)!)
+                storePictureURLs?.append(NSURL(string: value)!)
                 
             }
         }
@@ -51,13 +52,29 @@ class GDStatus: NSObject {
     var user: GDUser?
     
     //存储pic_urls中的NSURL
-    var pictureURLs: [NSURL]?
+    var storePictureURLs: [NSURL]?
+    //根据转发微博属性是否有值，返回对应的微博
+    var pictureURLs: [NSURL]? {
+        
+        get {
+            
+            return retweeted_status == nil ? storePictureURLs : retweeted_status?.storePictureURLs
+        }
+    
+    }
     
     //用于缓存cell的行高
     var rowHeight: CGFloat?
     
     /// 被转发微博
     var retweeted_status: GDStatus?
+    
+     /// 返回原创微博或者转发微博cell的ID
+     func cellId() -> String{
+        
+        return retweeted_status == nil ? GDStatusCellIndentifier.NormalCell.rawValue : GDStatusCellIndentifier.ForwardCell.rawValue
+        
+    }
     
     
     //字典转模型
@@ -133,7 +150,9 @@ class GDStatus: NSObject {
                     statuses.append(GDStatus(dict: dict))
                 }
                 //返回数据
-                finished(statuses: statuses, error: nil)
+//                finished(statuses: statuses, error: nil)
+                //调用图片缓存方法并返回数据
+                self.cacheWebImage(statuses, finished: finished)
                 
             }else{
             //没有返回数据
@@ -145,6 +164,80 @@ class GDStatus: NSObject {
     }
     
     
+    //缓存图片
+    class func cacheWebImage(statuses: [GDStatus]?, finished: (statuses: [GDStatus]? ,error: NSError?) -> ())
+    {
+        
+        //定义任务组
+        let group = dispatch_group_create()
+        
+        //记录下载图片的大小
+        var length = 0
+        
+        //判断是否有模型
+        guard let list = statuses else
+        {
+            //没有模型
+            return
+        }
+ 
+        //遍历模型数组
+        for status in list {
+            
+            
+            guard let urls = status.pictureURLs else
+            {
+                //当前模型没有数据，则直接遍历下一个模型
+                continue
+            }
+            
+            //            //遍历图片数组，获得每一个需要下载的url
+            //            for url in urls {
 
+            if urls.count == 1
+            {
+                let url = urls[0]
+                
+                //进入任务组
+                dispatch_group_enter(group)
+                
+                //缓存图片
+                SDWebImageManager.sharedManager().downloadImageWithURL(url, options: SDWebImageOptions(rawValue: 0), progress: nil, completed: { (image, error, _, _, _) -> Void in
+                    
+                    dispatch_group_leave(group)
+                    
+                    //离开任务组
+                    if error != nil
+                    {
+                        print("下载图片出错")
+                        finished(statuses: list, error: error)
+                        return
+                    }
+                    
+                    //下载图片没有出错
+                    print("下载完成: \(url)）")
+                    
+                    //获取下载图片的大小
+                    if let data = UIImagePNGRepresentation(image) {
+                        
+                        length += data.length
+                    }
+                    
+                })
+  
+            }
+            
+        }
+        //下载完成所有图片才通知调用者微博数据加载完成
+        dispatch_group_notify(group, dispatch_get_main_queue()) { () -> Void in
+            
+            print("下载图片完成:\(length / 1024) K")
+            
+            finished(statuses: list, error: nil)
+        }
+    }
 }
+
+
+
 

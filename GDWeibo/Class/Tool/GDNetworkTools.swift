@@ -203,9 +203,32 @@ class GDNetworkTools: NSObject {
         let urlString = "https://api.weibo.com/2/statuses/home_timeline.json"
         //get请求
         requestGET(urlString, parameters: parameters, finshed: finished)
+        
+        //加载本地数据
+//        loadLocalStatus(finished)
     }
     
-    
+//    /// 加载本地微博数据
+    private func loadLocalStatus(finished: NetworkFinishedCallback) {
+        // 获取路径
+        let path = NSBundle.mainBundle().pathForResource("statuses", ofType: "json")
+        
+        // 加载文件数据
+        let data = NSData(contentsOfFile: path!)
+        
+        // 转成json
+        do {
+            let json = try NSJSONSerialization.JSONObjectWithData(data!, options: NSJSONReadingOptions(rawValue: 0))
+            // 有数据
+            finished(result: json as? [String : AnyObject], error: nil)
+        } catch {
+            // 如果do里面的代码出错了,不会崩溃,会走这里
+            print("出异常了")
+        }
+        
+        // 强制try 如果这句代码有错误,程序立即停止运行
+        // let statusesJson = try! NSJSONSerialization.JSONObjectWithData(nsData, options: NSJSONReadingOptions(rawValue: 0))
+    }
     
     //返回值为token的字典
     func tokenDict(finished: NetworkFinishedCallback) -> [String: AnyObject]?

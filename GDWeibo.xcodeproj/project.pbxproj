@@ -31,7 +31,9 @@
 		B1AAAB0C1BE40A350080EF40 /* GDNetworkTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1AAAB0B1BE40A350080EF40 /* GDNetworkTools.swift */; settings = {ASSET_TAGS = (); }; };
 		B1CE09AB1BE0890E009A6687 /* GDBasicViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1CE09AA1BE0890E009A6687 /* GDBasicViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		B1CE09AD1BE08B06009A6687 /* GDVisitorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1CE09AC1BE08B06009A6687 /* GDVisitorView.swift */; settings = {ASSET_TAGS = (); }; };
+		B1E6D0AC1BEB436000DED026 /* GDStatusNormaCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E6D0AB1BEB436000DED026 /* GDStatusNormaCell.swift */; settings = {ASSET_TAGS = (); }; };
 		B1EA03351BE58E5500235F34 /* GDUserAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1EA03341BE58E5500235F34 /* GDUserAccount.swift */; settings = {ASSET_TAGS = (); }; };
+		B1EC344F1BEC513B00BED8DC /* statuses.json in Resources */ = {isa = PBXBuildFile; fileRef = B1EC344E1BEC513B00BED8DC /* statuses.json */; settings = {ASSET_TAGS = (); }; };
 		B1F48E3A1BEA04F400DFE559 /* GDStatusBottomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1F48E391BEA04F400DFE559 /* GDStatusBottomView.swift */; settings = {ASSET_TAGS = (); }; };
 		B1F48E3C1BEA061B00DFE559 /* UIButton+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1F48E3B1BEA061B00DFE559 /* UIButton+Extension.swift */; settings = {ASSET_TAGS = (); }; };
 		B1F9C98B1BE66171000AC1E4 /* GDNewFeatureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1F9C98A1BE66171000AC1E4 /* GDNewFeatureViewController.swift */; settings = {ASSET_TAGS = (); }; };
@@ -65,7 +67,9 @@
 		B1AAAB0B1BE40A350080EF40 /* GDNetworkTools.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GDNetworkTools.swift; sourceTree = "<group>"; };
 		B1CE09AA1BE0890E009A6687 /* GDBasicViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GDBasicViewController.swift; sourceTree = "<group>"; };
 		B1CE09AC1BE08B06009A6687 /* GDVisitorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GDVisitorView.swift; sourceTree = "<group>"; };
+		B1E6D0AB1BEB436000DED026 /* GDStatusNormaCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GDStatusNormaCell.swift; sourceTree = "<group>"; };
 		B1EA03341BE58E5500235F34 /* GDUserAccount.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GDUserAccount.swift; sourceTree = "<group>"; };
+		B1EC344E1BEC513B00BED8DC /* statuses.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = statuses.json; sourceTree = "<group>"; };
 		B1F48E391BEA04F400DFE559 /* GDStatusBottomView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GDStatusBottomView.swift; sourceTree = "<group>"; };
 		B1F48E3B1BEA061B00DFE559 /* UIButton+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIButton+Extension.swift"; sourceTree = "<group>"; };
 		B1F9C98A1BE66171000AC1E4 /* GDNewFeatureViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GDNewFeatureViewController.swift; path = ../../Model/GDNewFeatureViewController.swift; sourceTree = "<group>"; };
@@ -118,6 +122,7 @@
 				B14DB12C1BE0653800580B5E /* Class */,
 				B14DB1211BE0312700580B5E /* Assets.xcassets */,
 				B14DB1261BE0312700580B5E /* Info.plist */,
+				B1EC344E1BEC513B00BED8DC /* statuses.json */,
 			);
 			path = GDWeibo;
 			sourceTree = "<group>";
@@ -389,6 +394,7 @@
 			isa = PBXGroup;
 			children = (
 				B1747E441BE9C8C10066EF5A /* GDStatusCell.swift */,
+				B1E6D0AB1BEB436000DED026 /* GDStatusNormaCell.swift */,
 				B13E63911BEB2CF40002A13B /* GDStatusForwardCell.swift */,
 				B1747E411BE9C7970066EF5A /* GDStatusTopView.swift */,
 				B1F48E391BEA04F400DFE559 /* GDStatusBottomView.swift */,
@@ -475,6 +481,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B14DB1221BE0312700580B5E /* Assets.xcassets in Resources */,
+				B1EC344F1BEC513B00BED8DC /* statuses.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -550,6 +557,7 @@
 				B1747E421BE9C7970066EF5A /* GDStatusTopView.swift in Sources */,
 				B1747E401BE9B7300066EF5A /* GDUser.swift in Sources */,
 				B1EA03351BE58E5500235F34 /* GDUserAccount.swift in Sources */,
+				B1E6D0AC1BEB436000DED026 /* GDStatusNormaCell.swift in Sources */,
 				B1747E381BE924D50066EF5A /* UIBarButtonItem+Extension.swift in Sources */,
 				B1F48E3A1BEA04F400DFE559 /* GDStatusBottomView.swift in Sources */,
 				B14DB14F1BE0698700580B5E /* GDProfileViewController.swift in Sources */,

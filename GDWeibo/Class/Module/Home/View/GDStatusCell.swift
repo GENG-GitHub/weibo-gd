@@ -12,10 +12,10 @@ class GDStatusCell: UITableViewCell {
 
     // MARK: - 属性
     /// 配图宽度约束
-    private var pictureViewWidthCon: NSLayoutConstraint?
+     var pictureViewWidthCon: NSLayoutConstraint?
     
     /// 配图高度约束
-    private var pictureViewHeightCon: NSLayoutConstraint?
+     var pictureViewHeightCon: NSLayoutConstraint?
  
     var status: GDStatus? {
         didSet {
@@ -32,6 +32,7 @@ class GDStatusCell: UITableViewCell {
             //重新设置约束
             pictureViewWidthCon?.constant = size.width
             pictureViewHeightCon?.constant = size.height
+ 
         }
     }
 
@@ -58,9 +59,6 @@ class GDStatusCell: UITableViewCell {
         contentView.addSubview(bottomView)
         
         //设置约束
-        bottomView.translatesAutoresizingMaskIntoConstraints = false
-        pictureView.translatesAutoresizingMaskIntoConstraints = false
-        contentLabel.translatesAutoresizingMaskIntoConstraints = false
         
         topView.ff_AlignInner(type: ff_AlignType.TopLeft, referView: contentView, size: CGSize(width: UIScreen.mainScreen().bounds.width, height: 54))
         contentLabel.ff_AlignVertical(type: ff_AlignType.BottomLeft, referView: topView, size: nil, offset: CGPoint(x: 8, y: 8))
@@ -70,18 +68,11 @@ class GDStatusCell: UITableViewCell {
 //        contentView.addConstraint(NSLayoutConstraint(item: contentLabel, attribute: NSLayoutAttribute.Bottom, relatedBy: NSLayoutRelation.Equal, toItem: contentView, attribute: NSLayoutAttribute.Bottom, multiplier: 1, constant: 0))
         
         
-        //pictureView的约束
-        // 在内容标签的左下位置,距离右r边为8,宽高为290, 290
+
         
-        let cons = pictureView.ff_AlignVertical(type: ff_AlignType.BottomLeft, referView: contentLabel, size: CGSize(width: 290, height: 290), offset: CGPoint(x: 0, y: 8))
-        contentView.addConstraint(NSLayoutConstraint(item: bottomView, attribute: NSLayoutAttribute.Top, relatedBy: NSLayoutRelation.Equal, toItem: pictureView, attribute: NSLayoutAttribute.Bottom, multiplier: 1, constant: 8))
+//        contentView.addConstraint(NSLayoutConstraint(item: bottomView, attribute: NSLayoutAttribute.Top, relatedBy: NSLayoutRelation.Equal, toItem: pictureView, attribute: NSLayoutAttribute.Bottom, multiplier: 1, constant: 8))
         
         
-        // 获取配图视图的宽度约束
-        pictureViewWidthCon = pictureView.ff_Constraint(cons, attribute: NSLayoutAttribute.Width)
-        
-        // 获取配图视图的高度约束
-        pictureViewHeightCon = pictureView.ff_Constraint(cons, attribute: NSLayoutAttribute.Height)
 
         
         //设置底部View的约束
@@ -120,7 +111,7 @@ class GDStatusCell: UITableViewCell {
     ///底部View
     lazy var bottomView: GDStatusBottomView = GDStatusBottomView()
     /// 显示微博配图的View
-    private lazy var pictureView: GDStatusPictureView = GDStatusPictureView()
+    lazy var pictureView: GDStatusPictureView = GDStatusPictureView()
     
     
     //自行计算行高

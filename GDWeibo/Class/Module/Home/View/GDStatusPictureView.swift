@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SDWebImage
 
 class GDStatusPictureView: UICollectionView {
 
@@ -72,7 +73,7 @@ private let StatusPictureViewIdentifier = "StatusPictureViewIdentifier"
         let column = 3
         
         //获取配图的数量
-        let count = status?.pic_urls?.count ?? 0
+        let count = status?.pictureURLs?.count ?? 0
         
         //根据配图来甲酸配图尺寸
         if  count == 0
@@ -83,8 +84,26 @@ private let StatusPictureViewIdentifier = "StatusPictureViewIdentifier"
         
         // 1张图片
         if count == 1 {
-            let size = CGSize(width: 150, height: 120)
-            pictureLayout.itemSize = size
+            
+            var size = CGSize(width: 150, height: 120)
+
+            //获取单张图片的url
+            let url = status?.pictureURLs?.first?.absoluteString
+            
+            //从硬盘中获得存储图片,存在硬盘中没有缓存的情况，所有需要加判断
+            if let image = SDWebImageManager.sharedManager().imageCache.imageFromDiskCacheForKey(url) {
+                
+                pictureLayout.itemSize = image.size
+                size = image.size
+                
+            }
+            //如果图片太小
+            if size.width < 40 {
+                //默认
+                size.width = 40
+            }
+            
+            
             return size
         }
         
@@ -119,7 +138,7 @@ private let StatusPictureViewIdentifier = "StatusPictureViewIdentifier"
 extension GDStatusPictureView: UICollectionViewDataSource {
     
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return status?.pic_urls?.count ?? 0
+        return status?.pictureURLs?.count ?? 0
     }
     
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
@@ -164,7 +183,17 @@ class GDStatusPictureViewCell: UICollectionViewCell {
     }
     
     //MARK: - 懒加载控件
-    private lazy var iconView = UIImageView()
+    private lazy var iconView: UIImageView = {
+       
+        let imageView = UIImageView()
+        //设置图片的填充模式
+        imageView.contentMode = UIViewContentMode.ScaleAspectFill
+        //裁剪超出控件区域的图片
+        imageView.clipsToBounds = true
+        
+        return imageView
+        
+    }()
     
     //显示图片
     var imageURL: NSURL? {

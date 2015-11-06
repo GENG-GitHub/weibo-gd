@@ -10,7 +10,7 @@ import UIKit
 
 
 extension UILabel {
-    
+
     //创建便利函数
     convenience init(fontSize: CGFloat, textColor: UIColor)
     {

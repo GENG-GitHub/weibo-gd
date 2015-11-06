@@ -48,7 +48,7 @@ class GDStatusTopView: UIView {
         
         super.init(frame: frame)
     
-        backgroundColor = UIColor.brownColor()
+        backgroundColor = UIColor.whiteColor()
         //设置子控件
         prepareUI()
         
