@@ -16,7 +16,7 @@ class GDStatus: NSObject {
     var created_at: String?
     
     /// 字符串型的微博ID
-    var idstr: String?
+    var id: Int = 0
     
     /// 微博信息内容
     var text: String?
@@ -126,9 +126,9 @@ class GDStatus: NSObject {
     
     
     //MARK: - 加载微博数据
-    class func loadStatus(finished: (statuses: [GDStatus]?, error: NSError?) -> ())
+    class func loadStatus(since_id: Int, max_id: Int,finished: (statuses: [GDStatus]?, error: NSError?) -> ())
     {
-        GDNetworkTools.sharedNetworkTool.loadStatus { (result, error) -> () in
+        GDNetworkTools.sharedNetworkTool.loadStatus(since_id, max_id: max_id){ (result, error) -> () in
 
             //数据请求失败
             if error != nil
@@ -215,7 +215,7 @@ class GDStatus: NSObject {
                     }
                     
                     //下载图片没有出错
-                    print("下载完成: \(url)）")
+//                    print("下载完成: \(url)）")
                     
                     //获取下载图片的大小
                     if let data = UIImagePNGRepresentation(image) {
@@ -231,7 +231,7 @@ class GDStatus: NSObject {
         //下载完成所有图片才通知调用者微博数据加载完成
         dispatch_group_notify(group, dispatch_get_main_queue()) { () -> Void in
             
-            print("下载图片完成:\(length / 1024) K")
+//            print("下载图片完成:\(length / 1024) K")
             
             finished(statuses: list, error: nil)
         }

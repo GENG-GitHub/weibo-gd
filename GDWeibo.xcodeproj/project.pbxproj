@@ -27,6 +27,7 @@
 		B1747E451BE9C8C10066EF5A /* GDStatusCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1747E441BE9C8C10066EF5A /* GDStatusCell.swift */; settings = {ASSET_TAGS = (); }; };
 		B1747E471BE9D28D0066EF5A /* UILabel+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1747E461BE9D28D0066EF5A /* UILabel+Extension.swift */; settings = {ASSET_TAGS = (); }; };
 		B17C01701BEA6DA600F9E016 /* GDStatusPictureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B17C016F1BEA6DA600F9E016 /* GDStatusPictureView.swift */; settings = {ASSET_TAGS = (); }; };
+		B19A41871BED8BDD003238E2 /* GDComposeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B19A41861BED8BDD003238E2 /* GDComposeViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		B1AAAB0A1BE3DB4A0080EF40 /* GDOauthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1AAAB091BE3DB4A0080EF40 /* GDOauthViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		B1AAAB0C1BE40A350080EF40 /* GDNetworkTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1AAAB0B1BE40A350080EF40 /* GDNetworkTools.swift */; settings = {ASSET_TAGS = (); }; };
 		B1CE09AB1BE0890E009A6687 /* GDBasicViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1CE09AA1BE0890E009A6687 /* GDBasicViewController.swift */; settings = {ASSET_TAGS = (); }; };
@@ -34,8 +35,11 @@
 		B1E6D0AC1BEB436000DED026 /* GDStatusNormaCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E6D0AB1BEB436000DED026 /* GDStatusNormaCell.swift */; settings = {ASSET_TAGS = (); }; };
 		B1EA03351BE58E5500235F34 /* GDUserAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1EA03341BE58E5500235F34 /* GDUserAccount.swift */; settings = {ASSET_TAGS = (); }; };
 		B1EC344F1BEC513B00BED8DC /* statuses.json in Resources */ = {isa = PBXBuildFile; fileRef = B1EC344E1BEC513B00BED8DC /* statuses.json */; settings = {ASSET_TAGS = (); }; };
+		B1EC34521BEC54EB00BED8DC /* GDRefreshControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1EC34511BEC54EB00BED8DC /* GDRefreshControl.swift */; settings = {ASSET_TAGS = (); }; };
+		B1EC34541BEC551300BED8DC /* GDRefreshView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B1EC34531BEC551300BED8DC /* GDRefreshView.xib */; settings = {ASSET_TAGS = (); }; };
 		B1F48E3A1BEA04F400DFE559 /* GDStatusBottomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1F48E391BEA04F400DFE559 /* GDStatusBottomView.swift */; settings = {ASSET_TAGS = (); }; };
 		B1F48E3C1BEA061B00DFE559 /* UIButton+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1F48E3B1BEA061B00DFE559 /* UIButton+Extension.swift */; settings = {ASSET_TAGS = (); }; };
+		B1F983811BEDD46500888062 /* GDPlaceHolderTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1F983801BEDD46500888062 /* GDPlaceHolderTextView.swift */; settings = {ASSET_TAGS = (); }; };
 		B1F9C98B1BE66171000AC1E4 /* GDNewFeatureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1F9C98A1BE66171000AC1E4 /* GDNewFeatureViewController.swift */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
@@ -63,6 +67,7 @@
 		B1747E441BE9C8C10066EF5A /* GDStatusCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GDStatusCell.swift; sourceTree = "<group>"; };
 		B1747E461BE9D28D0066EF5A /* UILabel+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UILabel+Extension.swift"; sourceTree = "<group>"; };
 		B17C016F1BEA6DA600F9E016 /* GDStatusPictureView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GDStatusPictureView.swift; sourceTree = "<group>"; };
+		B19A41861BED8BDD003238E2 /* GDComposeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GDComposeViewController.swift; path = ../GDComposeViewController.swift; sourceTree = "<group>"; };
 		B1AAAB091BE3DB4A0080EF40 /* GDOauthViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GDOauthViewController.swift; sourceTree = "<group>"; };
 		B1AAAB0B1BE40A350080EF40 /* GDNetworkTools.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GDNetworkTools.swift; sourceTree = "<group>"; };
 		B1CE09AA1BE0890E009A6687 /* GDBasicViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GDBasicViewController.swift; sourceTree = "<group>"; };
@@ -70,8 +75,11 @@
 		B1E6D0AB1BEB436000DED026 /* GDStatusNormaCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GDStatusNormaCell.swift; sourceTree = "<group>"; };
 		B1EA03341BE58E5500235F34 /* GDUserAccount.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GDUserAccount.swift; sourceTree = "<group>"; };
 		B1EC344E1BEC513B00BED8DC /* statuses.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = statuses.json; sourceTree = "<group>"; };
+		B1EC34511BEC54EB00BED8DC /* GDRefreshControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GDRefreshControl.swift; sourceTree = "<group>"; };
+		B1EC34531BEC551300BED8DC /* GDRefreshView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GDRefreshView.xib; sourceTree = "<group>"; };
 		B1F48E391BEA04F400DFE559 /* GDStatusBottomView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GDStatusBottomView.swift; sourceTree = "<group>"; };
 		B1F48E3B1BEA061B00DFE559 /* UIButton+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIButton+Extension.swift"; sourceTree = "<group>"; };
+		B1F983801BEDD46500888062 /* GDPlaceHolderTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GDPlaceHolderTextView.swift; sourceTree = "<group>"; };
 		B1F9C98A1BE66171000AC1E4 /* GDNewFeatureViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GDNewFeatureViewController.swift; path = ../../Model/GDNewFeatureViewController.swift; sourceTree = "<group>"; };
 		C547E420F515CF5DFAD5C9F0 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -173,6 +181,7 @@
 		B14DB1301BE0653800580B5E /* Module(模块) */ = {
 			isa = PBXGroup;
 			children = (
+				B19A41851BED8BAB003238E2 /* Compose */,
 				B173D6701BE6075D00F4C135 /* NewFeature(新特性) */,
 				B1AAAB081BE3DB1D0080EF40 /* Oauth(授权) */,
 				B14DB1391BE0653800580B5E /* Main(主要的) */,
@@ -247,6 +256,7 @@
 		B14DB1381BE0653800580B5E /* View */ = {
 			isa = PBXGroup;
 			children = (
+				B1EC34501BEC54C000BED8DC /* RefreshControl */,
 				B1747E431BE9C79E0066EF5A /* Cell */,
 				B1747E391BE92AC50066EF5A /* GDHomeTitleButton.swift */,
 			);
@@ -403,6 +413,39 @@
 			name = Cell;
 			sourceTree = "<group>";
 		};
+		B19A41851BED8BAB003238E2 /* Compose */ = {
+			isa = PBXGroup;
+			children = (
+				B19A41881BED9173003238E2 /* Controller */,
+				B19A41891BED9173003238E2 /* Model */,
+				B19A418A1BED9173003238E2 /* View */,
+			);
+			path = Compose;
+			sourceTree = "<group>";
+		};
+		B19A41881BED9173003238E2 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				B19A41861BED8BDD003238E2 /* GDComposeViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		B19A41891BED9173003238E2 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		B19A418A1BED9173003238E2 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				B1F983801BEDD46500888062 /* GDPlaceHolderTextView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		B1AAAB081BE3DB1D0080EF40 /* Oauth(授权) */ = {
 			isa = PBXGroup;
 			children = (
@@ -410,6 +453,15 @@
 			);
 			name = "Oauth(授权)";
 			path = Oauth;
+			sourceTree = "<group>";
+		};
+		B1EC34501BEC54C000BED8DC /* RefreshControl */ = {
+			isa = PBXGroup;
+			children = (
+				B1EC34511BEC54EB00BED8DC /* GDRefreshControl.swift */,
+				B1EC34531BEC551300BED8DC /* GDRefreshView.xib */,
+			);
+			path = RefreshControl;
 			sourceTree = "<group>";
 		};
 		D8823F18A5CF6C3AEDB84714 /* Frameworks */ = {
@@ -482,6 +534,7 @@
 			files = (
 				B14DB1221BE0312700580B5E /* Assets.xcassets in Resources */,
 				B1EC344F1BEC513B00BED8DC /* statuses.json in Resources */,
+				B1EC34541BEC551300BED8DC /* GDRefreshView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -540,7 +593,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B1EC34521BEC54EB00BED8DC /* GDRefreshControl.swift in Sources */,
 				B17C01701BEA6DA600F9E016 /* GDStatusPictureView.swift in Sources */,
+				B1F983811BEDD46500888062 /* GDPlaceHolderTextView.swift in Sources */,
 				B1747E471BE9D28D0066EF5A /* UILabel+Extension.swift in Sources */,
 				B14DB1511BE07A7900580B5E /* GDMainTabBar.swift in Sources */,
 				B1747E3C1BE94E6B0066EF5A /* UIView+AutoLayout.swift in Sources */,
@@ -550,6 +605,7 @@
 				B173D6741BE607DA00F4C135 /* GDWelcomeViewController.swift in Sources */,
 				B1747E3A1BE92AC50066EF5A /* GDHomeTitleButton.swift in Sources */,
 				B1CE09AD1BE08B06009A6687 /* GDVisitorView.swift in Sources */,
+				B19A41871BED8BDD003238E2 /* GDComposeViewController.swift in Sources */,
 				B1747E451BE9C8C10066EF5A /* GDStatusCell.swift in Sources */,
 				B1CE09AB1BE0890E009A6687 /* GDBasicViewController.swift in Sources */,
 				B13E63921BEB2CF40002A13B /* GDStatusForwardCell.swift in Sources */,

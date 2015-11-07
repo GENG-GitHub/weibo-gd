@@ -192,13 +192,23 @@ class GDNetworkTools: NSObject {
     
     
     //MARK: - 获取微博数据
-    func loadStatus(finished:NetworkFinishedCallback)
+    func loadStatus(since_id:Int, max_id: Int, finished:NetworkFinishedCallback)
     {
         
-        guard let parameters = tokenDict(finished) else{
+        guard var parameters = tokenDict(finished) else{
             
             return
         }
+        
+        //判断是否传入了since_id
+        if since_id > 0 {
+            //请求参数添加since_id
+            parameters["since_id"] = since_id
+        }else if max_id > 0 {
+            //请求参数添加max_id
+            parameters["max_id"] = max_id - 1
+        }
+        
         //https://api.weibo.com/2/statuses/home_timeline.json?access_token=2.002K76cCdFZjyBa9cdde6092r1Z_eC
         let urlString = "https://api.weibo.com/2/statuses/home_timeline.json"
         //get请求

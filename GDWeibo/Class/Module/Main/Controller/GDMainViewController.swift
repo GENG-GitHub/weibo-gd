@@ -10,6 +10,23 @@ import UIKit
 
 class GDMainViewController: UITabBarController {
 
+    //发微博按钮点击方法
+    func composeBtnClick() {
+        
+        if GDUserAccount.loadAccount() == nil
+        {
+            //当用户没有登录时，点击了按钮后跳转到认证登录界面
+            (UIApplication.sharedApplication().delegate as! AppDelegate).window?.rootViewController = GDOauthViewController()
+            return
+        }
+        
+        let controller = GDComposeViewController()
+        //modal出新的控制器
+        presentViewController(UINavigationController(rootViewController: controller), animated: true, completion: nil)
+        
+//        print("点击了按钮")
+        
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
       
@@ -86,6 +103,8 @@ class GDMainViewController: UITabBarController {
         //按钮的背景
         btn.setBackgroundImage(UIImage(named: "tabbar_compose_button"), forState:UIControlState.Normal)
         btn.setBackgroundImage(UIImage(named: "tabbar_compose_button_highlighted"), forState: UIControlState.Highlighted)
+        
+        btn.addTarget(self, action: "composeBtnClick", forControlEvents: UIControlEvents.TouchUpInside)
         
         return btn
         
